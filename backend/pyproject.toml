@@ -3,7 +3,11 @@ name = "groundwork"
 version = "0.1.0"
 description = "RAG assistant over co-op job postings that answers with citations or refuses."
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "httpx==0.28.1",
+    "psycopg[binary]==3.3.9",
+    "python-dotenv==1.2.4",
+]
 
 [project.optional-dependencies]
 dev = [
@@ -20,6 +24,8 @@ packages = ["groundwork"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+addopts = "-m 'not integration'"
+markers = ["integration: hits the real database or Voyage API, run with -m integration"]
 
 [tool.ruff]
 line-length = 100
