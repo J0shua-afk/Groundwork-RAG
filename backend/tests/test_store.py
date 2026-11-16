@@ -1,6 +1,7 @@
 import os
 import re
 
+import psycopg
 import pytest
 
 from groundwork import config
@@ -201,3 +202,22 @@ def test_corpus_info_counts_postings_and_lists_companies_and_settings(store):
     assert info.posting_count == before.posting_count + 1
     assert "Alpha Test Co" in info.companies
     assert "label-x" in info.settings
+
+
+@pytest.mark.integration
+def test_api_role_can_read_but_not_write():
+    api_url = os.environ.get("API_DATABASE_URL", "").strip()
+    owner_url = os.environ.get("PUBLIC_DATABASE_URL", "").strip()
+    if not (api_url and owner_url):
+        pytest.skip("needs API_DATABASE_URL and PUBLIC_DATABASE_URL")
+    api_store, owner = Store.connect(api_url), Store.connect(owner_url)
+    try:
+        # the RLS policies let it see exactly what the owner sees
+        assert api_store.count_postings() == owner.count_postings()
+        # pgvector works through the transaction pooler with prepared statements off
+        assert isinstance(api_store.search(axis(0), top_k=1), list)
+        with pytest.raises(psycopg.errors.InsufficientPrivilege):
+            api_store.delete_posting(SOURCE_ID)
+    finally:
+        api_store.close()
+        owner.close()
