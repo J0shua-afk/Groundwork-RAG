@@ -2,12 +2,12 @@
 
 from dataclasses import dataclass
 
-import httpx
+import httpx2
 
 from groundwork import config
 
 # plain HTTP on purpose: the voyageai package drags in numpy, pillow, tokenizers and more,
-# and all of that would end up in the Vercel function
+# and all of that would end up in the Vercel function. httpx2 since the Anthropic SDK uses it
 VOYAGE_URL = "https://api.voyageai.com/v1/embeddings"
 
 
@@ -22,9 +22,9 @@ class Embeddings:
 
 
 class VoyageEmbedder:
-    def __init__(self, api_key: str, client: httpx.Client | None = None):
+    def __init__(self, api_key: str, client: httpx2.Client | None = None):
         self.api_key = api_key
-        self.client = client or httpx.Client(timeout=30)
+        self.client = client or httpx2.Client(timeout=30)
 
     def embed_documents(self, texts: list[str]) -> Embeddings:
         return self._embed(texts, input_type="document")

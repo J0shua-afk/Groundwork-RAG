@@ -157,7 +157,7 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--yes", action="store_true", help="allow removing every posting")
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(message)s")
-    logging.getLogger("httpx").setLevel(logging.WARNING)  # it logs every request at INFO
+    logging.getLogger("httpx2").setLevel(logging.WARNING)  # it logs every request at INFO
 
     folder, url_name = config.CORPORA[args.corpus]
     try:

@@ -1,32 +1,32 @@
 import json
 import os
 
-import httpx
+import httpx2
 import pytest
 
 from groundwork import config
 from groundwork.embed import VOYAGE_URL, EmbeddingError, VoyageEmbedder
 
 
-def fake_voyage(request: httpx.Request) -> httpx.Response:
+def fake_voyage(request: httpx2.Request) -> httpx2.Response:
     # texts in these tests are numbers, so each vector says which text it came from
     texts = json.loads(request.content)["input"]
     data = [
         {"object": "embedding", "embedding": [float(text)], "index": index}
         for index, text in enumerate(texts)
     ]
-    return httpx.Response(
+    return httpx2.Response(
         200,
         json={"object": "list", "data": data, "usage": {"total_tokens": 5 * len(texts)}},
     )
 
 
-def make_embedder(handler, sent: list[httpx.Request]) -> VoyageEmbedder:
-    def record(request: httpx.Request) -> httpx.Response:
+def make_embedder(handler, sent: list[httpx2.Request]) -> VoyageEmbedder:
+    def record(request: httpx2.Request) -> httpx2.Response:
         sent.append(request)
         return handler(request)
 
-    client = httpx.Client(transport=httpx.MockTransport(record))
+    client = httpx2.Client(transport=httpx2.MockTransport(record))
     return VoyageEmbedder("test-key", client=client)
 
 
@@ -34,7 +34,7 @@ def make_embedder(handler, sent: list[httpx.Request]) -> VoyageEmbedder:
 
 
 def test_documents_are_sent_with_the_model_dimensions_and_key():
-    sent: list[httpx.Request] = []
+    sent: list[httpx2.Request] = []
     make_embedder(fake_voyage, sent).embed_documents(["1", "2"])
 
     assert len(sent) == 1
@@ -49,7 +49,7 @@ def test_documents_are_sent_with_the_model_dimensions_and_key():
 
 
 def test_question_is_embedded_as_a_query():
-    sent: list[httpx.Request] = []
+    sent: list[httpx2.Request] = []
     vector = make_embedder(fake_voyage, sent).embed_query("7")
 
     assert vector == [7.0]
@@ -57,7 +57,7 @@ def test_question_is_embedded_as_a_query():
 
 
 def test_nothing_to_embed_makes_no_request():
-    sent: list[httpx.Request] = []
+    sent: list[httpx2.Request] = []
     result = make_embedder(fake_voyage, sent).embed_documents([])
     assert result.vectors == []
     assert sent == []
@@ -68,7 +68,7 @@ def test_nothing_to_embed_makes_no_request():
 
 def test_large_input_is_split_into_batches_and_kept_in_order(monkeypatch):
     monkeypatch.setattr(config, "EMBED_BATCH_SIZE", 2)
-    sent: list[httpx.Request] = []
+    sent: list[httpx2.Request] = []
 
     result = make_embedder(fake_voyage, sent).embed_documents(["0", "1", "2", "3", "4"])
 
@@ -78,10 +78,10 @@ def test_large_input_is_split_into_batches_and_kept_in_order(monkeypatch):
 
 
 def test_items_returned_out_of_order_go_back_in_input_order():
-    def shuffled(request: httpx.Request) -> httpx.Response:
+    def shuffled(request: httpx2.Request) -> httpx2.Response:
         body = fake_voyage(request).json()
         body["data"].reverse()
-        return httpx.Response(200, json=body)
+        return httpx2.Response(200, json=body)
 
     result = make_embedder(shuffled, []).embed_documents(["0", "1", "2"])
     assert result.vectors == [[0.0], [1.0], [2.0]]
@@ -91,8 +91,8 @@ def test_items_returned_out_of_order_go_back_in_input_order():
 
 
 def test_voyage_error_is_raised_with_its_detail_but_never_the_key():
-    def rejected(request: httpx.Request) -> httpx.Response:
-        return httpx.Response(401, json={"detail": "Provided API key is invalid."})
+    def rejected(request: httpx2.Request) -> httpx2.Response:
+        return httpx2.Response(401, json={"detail": "Provided API key is invalid."})
 
     with pytest.raises(EmbeddingError, match="401: Provided API key is invalid") as error:
         make_embedder(rejected, []).embed_documents(["1"])
@@ -100,8 +100,8 @@ def test_voyage_error_is_raised_with_its_detail_but_never_the_key():
 
 
 def test_error_without_a_json_body_still_raises():
-    def down(request: httpx.Request) -> httpx.Response:
-        return httpx.Response(503, text="Service Unavailable")
+    def down(request: httpx2.Request) -> httpx2.Response:
+        return httpx2.Response(503, text="Service Unavailable")
 
     with pytest.raises(EmbeddingError, match="503: Service Unavailable"):
         make_embedder(down, []).embed_documents(["1"])
