@@ -21,6 +21,18 @@ EMBEDDING_MODEL = "voyage-4-lite"
 EMBEDDING_DIMENSIONS = 1024  # has to match vector(1024) in sql/schema.sql
 EMBED_BATCH_SIZE = 128  # Voyage takes up to 1,000 texts per request, no need to push it
 
+# retrieval
+TOP_K = 5
+# UNTUNED. a provisional guess that should only catch clearly off-topic questions. Phase 5 sets
+# it from the eval on real postings. never tune it on the samples
+REFUSAL_THRESHOLD = 0.25
+
+# generation
+GENERATION_MODEL = "claude-haiku-5-5"
+GENERATION_EFFORT = "low"  # Haiku 5.5 defaults to medium; short grounded answers don't need more
+MAX_OUTPUT_TOKENS = 1024  # thinking counts toward this too, so leave some room
+GENERATION_TIMEOUT_SECONDS = 30  # the SDK default is 10 minutes, way too long to wait on a page
+
 # each corpus has its own folder and database. real postings only ever go to the private one
 CORPORA = {
     "private": (REPO_ROOT / "data" / "postings", "PRIVATE_DATABASE_URL"),
