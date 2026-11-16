@@ -14,7 +14,7 @@ import psycopg
 
 from groundwork import config
 from groundwork.chunk import chunk_posting
-from groundwork.embed import VoyageEmbedder
+from groundwork.embed import VoyageEmbedder, embedding_label
 from groundwork.postings import load_postings
 from groundwork.store import IngestedPosting, Store
 
@@ -44,7 +44,7 @@ class IngestResult:
 def current_settings() -> str:
     # anything that changes the stored chunks or vectors belongs here, so changing it re-embeds
     return (
-        f"{config.EMBEDDING_MODEL}/{config.EMBEDDING_DIMENSIONS} chunk={config.CHUNK_TOKENS} "
+        f"{embedding_label()} chunk={config.CHUNK_TOKENS} "
         f"overlap={config.CHUNK_OVERLAP_TOKENS} tpw={config.TOKENS_PER_WORD} "
         f"heading={config.HEADING_MAX_WORDS}"
     )

@@ -11,6 +11,11 @@ from groundwork import config
 VOYAGE_URL = "https://api.voyageai.com/v1/embeddings"
 
 
+def embedding_label() -> str:
+    # stored with every posting; vectors from a different model or size can't be compared
+    return f"{config.EMBEDDING_MODEL}/{config.EMBEDDING_DIMENSIONS}"
+
+
 class EmbeddingError(Exception):
     """Voyage rejected the request or is down."""
 
