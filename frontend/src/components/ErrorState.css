@@ -1,0 +1,32 @@
+.error {
+  display: grid;
+  gap: var(--space-2);
+  max-width: var(--measure);
+  animation: appear var(--duration) var(--ease-out) both;
+}
+
+.error__title {
+  font-size: var(--text-state);
+  color: var(--error);
+}
+
+.error p {
+  color: var(--ink-soft);
+}
+
+/* secondary on purpose: Ask stays the only filled button */
+.error__retry {
+  justify-self: start;
+  min-height: 2.75rem;
+  margin-top: var(--space-2);
+  padding: 0 var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--paper);
+  font-weight: 600;
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.error__retry:hover {
+  border-color: var(--ink);
+}

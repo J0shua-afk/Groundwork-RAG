@@ -1,0 +1,14 @@
+.refusal {
+  display: grid;
+  gap: var(--space-2);
+  max-width: var(--measure);
+  animation: appear var(--duration) var(--ease-out) both;
+}
+
+.refusal__title {
+  font-size: var(--text-state);
+}
+
+.refusal p {
+  color: var(--ink-soft);
+}
