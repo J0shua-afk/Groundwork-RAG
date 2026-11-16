@@ -1,0 +1,41 @@
+.examples {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.examples__title {
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+}
+
+.examples__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-5);
+  padding: 0;
+  list-style: none;
+}
+
+.examples__button {
+  min-height: 2.75rem;
+  padding: var(--space-2) 0;
+  border: 0;
+  background: none;
+  color: var(--blueprint);
+  text-align: start;
+  text-decoration: underline;
+  text-decoration-color: var(--blueprint-tint);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+  transition: text-decoration-color var(--duration-fast) var(--ease-out);
+}
+
+.examples__button:hover {
+  text-decoration-color: currentColor;
+}
+
+/* only while a question is out */
+.examples__button:disabled {
+  cursor: progress;
+  color: var(--ink-faint);
+}

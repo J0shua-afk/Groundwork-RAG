@@ -1,0 +1,107 @@
+.question__field {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--pad-field);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  /* solid paper behind the field so the grid doesn't run through what you type */
+  background: var(--paper);
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.question__field:hover:not(:has(.question__input:disabled)) {
+  border-color: var(--ink-soft);
+}
+
+/* the whole field gets the ring, not the bare textarea inside it */
+.question__field:has(.question__input:focus-visible) {
+  border-color: var(--ink);
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.question__input {
+  width: 100%;
+  min-height: 3.5rem;
+  max-height: 14rem;
+  field-sizing: content;
+  resize: none;
+  padding: var(--space-2) var(--space-3);
+  border: 0;
+  background: transparent;
+  font-size: var(--text-field);
+  line-height: 1.4;
+  caret-color: var(--ink);
+}
+
+.question__input:focus-visible {
+  outline: none;
+}
+
+.question__input:disabled {
+  cursor: not-allowed;
+}
+
+.question__input::placeholder {
+  color: var(--ink-faint);
+  opacity: 1;
+}
+
+.question__bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+}
+
+.question__count {
+  font-family: var(--mono);
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-faint);
+}
+
+.question__ask {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-width: 6.5rem;
+  min-height: 2.75rem;
+  padding: 0 var(--space-5);
+  border: 0;
+  border-radius: var(--r-sm);
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.question__ask:hover {
+  background: var(--accent-hover);
+}
+
+.question__ask[aria-busy="true"] {
+  cursor: progress;
+}
+
+.question__ask:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.question__spinner {
+  width: 0.875em;
+  height: 0.875em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: question-spin 0.7s linear infinite;
+}
+
+@keyframes question-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
