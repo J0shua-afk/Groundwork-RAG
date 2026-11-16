@@ -65,8 +65,12 @@ class Store:
     @classmethod
     def connect(cls, url: str) -> "Store":
         # autocommit, so writes only group up inside explicit transaction() blocks. without it
-        # psycopg quietly holds a transaction open and nothing is saved until commit()
-        return cls(psycopg.connect(url, autocommit=True, connect_timeout=10))
+        # psycopg quietly holds a transaction open and nothing is saved until commit().
+        # prepare_threshold=None because Supabase's transaction pooler (what Vercel uses) can't
+        # do prepared statements; costs nothing in session mode
+        return cls(
+            psycopg.connect(url, autocommit=True, connect_timeout=10, prepare_threshold=None)
+        )
 
     def close(self) -> None:
         self.conn.close()
