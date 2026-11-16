@@ -18,11 +18,44 @@ INSERT_CHUNK = """
     values (%s, %s, %s, %s::extensions.vector)
 """
 
+# <=> is pgvector's cosine distance, so 1 - distance is the cosine similarity.
+# companies = null searches everything, a list narrows it to those companies
+SEARCH = """
+    select c.source_id, c.chunk_index, c.text, p.company, p.title, p.location, p.work_model,
+           p.term, p.url, 1 - (c.embedding <=> %(vector)s::extensions.vector) as score
+    from chunks c
+    join postings p using (source_id)
+    where %(companies)s::text[] is null or p.company = any(%(companies)s::text[])
+    order by c.embedding <=> %(vector)s::extensions.vector
+    limit %(top_k)s
+"""
+
 
 @dataclass(frozen=True)
 class IngestedPosting:
     file_hash: str
     settings: str
+
+
+@dataclass(frozen=True)
+class CorpusInfo:
+    posting_count: int
+    companies: list[str]
+    settings: set[str]
+
+
+@dataclass(frozen=True)
+class Hit:
+    source_id: str
+    chunk_index: int
+    text: str
+    company: str
+    title: str
+    location: str
+    work_model: str
+    term: str
+    url: str | None
+    score: float  # cosine similarity: 1 means same direction, around 0 means unrelated
 
 
 class Store:
@@ -46,6 +79,22 @@ class Store:
         return {
             source_id: IngestedPosting(digest, settings) for source_id, digest, settings in rows
         }
+
+    def corpus_info(self) -> CorpusInfo:
+        # one cheap query before every question: the empty check, the company list for the
+        # filter, and the settings labels for the model check
+        rows = self.conn.execute("select company, settings from postings").fetchall()
+        return CorpusInfo(
+            posting_count=len(rows),
+            companies=sorted({company for company, _ in rows}),
+            settings={settings for _, settings in rows},
+        )
+
+    def search(
+        self, vector: list[float], top_k: int, companies: list[str] | None = None
+    ) -> list[Hit]:
+        params = {"vector": to_vector(vector), "companies": companies, "top_k": top_k}
+        return [Hit(*row) for row in self.conn.execute(SEARCH, params).fetchall()]
 
     def save_posting(
         self,

@@ -11,10 +11,10 @@ from groundwork.store import Store, to_vector
 SOURCE_ID = "test-integration-posting"
 
 
-def make_posting() -> Posting:
+def make_posting(source_id: str = SOURCE_ID, company: str = "Fixture Foods (Sample)") -> Posting:
     return Posting(
-        source_id=SOURCE_ID,
-        company="Fixture Foods (Sample)",
+        source_id=source_id,
+        company=company,
         title="Inventory Analyst Co-op",
         location="Mississauga, ON",
         work_model=WorkModel.HYBRID,
@@ -28,6 +28,18 @@ def make_chunks(count: int) -> tuple[list[Chunk], list[list[float]]]:
     chunks = [Chunk(SOURCE_ID, index, f"chunk {index}") for index in range(count)]
     vectors = [[(index + 1) / 1000] * config.EMBEDDING_DIMENSIONS for index in range(count)]
     return chunks, vectors
+
+
+def axis(position: int) -> list[float]:
+    # points along a single dimension, so similarities between these are exactly 1 or 0
+    vector = [0.0] * config.EMBEDDING_DIMENSIONS
+    vector[position] = 1.0
+    return vector
+
+
+def save_one_chunk(store: Store, source_id: str, company: str, vector: list[float]) -> None:
+    chunk = Chunk(source_id, 0, f"{company} chunk")
+    store.save_posting(make_posting(source_id, company), "hash-1", "label-x", [chunk], [vector])
 
 
 def chunk_count(store: Store) -> int:
@@ -153,3 +165,39 @@ def test_vectors_and_work_model_are_stored_as_expected(store):
     ).fetchone()[0]
     assert dims == config.EMBEDDING_DIMENSIONS
     assert work_model == "hybrid"
+
+
+@pytest.mark.integration
+def test_search_ranks_the_closest_chunk_first_and_joins_its_posting(store):
+    save_one_chunk(store, "test-integration-alpha", "Alpha Test Co", axis(0))
+    save_one_chunk(store, "test-integration-bravo", "Bravo Test Co", axis(1))
+
+    hits = store.search(axis(0), top_k=50)
+
+    assert hits[0].source_id == "test-integration-alpha"
+    assert hits[0].score == pytest.approx(1.0)
+    assert hits[0].company == "Alpha Test Co"
+    bravo = next(hit for hit in hits if hit.source_id == "test-integration-bravo")
+    assert bravo.score == pytest.approx(0.0)
+
+
+@pytest.mark.integration
+def test_company_filter_returns_only_that_company(store):
+    save_one_chunk(store, "test-integration-alpha", "Alpha Test Co", axis(0))
+    save_one_chunk(store, "test-integration-bravo", "Bravo Test Co", axis(1))
+
+    hits = store.search(axis(0), top_k=50, companies=["Bravo Test Co"])
+
+    assert [hit.source_id for hit in hits] == ["test-integration-bravo"]
+
+
+@pytest.mark.integration
+def test_corpus_info_counts_postings_and_lists_companies_and_settings(store):
+    before = store.corpus_info()
+    save_one_chunk(store, "test-integration-alpha", "Alpha Test Co", axis(0))
+
+    info = store.corpus_info()
+
+    assert info.posting_count == before.posting_count + 1
+    assert "Alpha Test Co" in info.companies
+    assert "label-x" in info.settings
