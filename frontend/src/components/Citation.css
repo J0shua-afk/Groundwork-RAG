@@ -1,0 +1,26 @@
+.citation {
+  /* mono brackets already carry side space, so keep the padding tight or punctuation drifts off */
+  padding: 0.1em 0.08em;
+  border-radius: var(--r-xs);
+  font-family: var(--mono);
+  font-size: 0.8em;
+  font-variant-numeric: tabular-nums;
+  color: var(--blueprint);
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.citation:hover,
+.citation--active {
+  background: var(--accent-tint);
+  color: var(--ink);
+}
+
+@media (forced-colors: active) {
+  .citation--active {
+    outline: 1px solid Highlight;
+  }
+}
