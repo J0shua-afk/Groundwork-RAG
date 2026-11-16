@@ -5,8 +5,6 @@ work_model: remote
 term: not stated
 url: none
 ---
-This is a fictional sample posting written for the Groundwork demo. Larkspire Civic Labs does not exist.
-
 ## Who We Are
 Larkspire Civic Labs is a small non-profit research group that studies how cities can use open data to plan transit and housing. We publish our code and our papers, and we partner with municipal planning offices across Canada.
 
@@ -36,3 +34,5 @@ The start and end dates are set with each student's university and are not state
 
 ## How to Apply
 Send a CV, a transcript and a one-page summary of a past machine learning project through your university's co-op office.
+
+This is a fictional sample posting written for the Groundwork demo. Larkspire Civic Labs does not exist.

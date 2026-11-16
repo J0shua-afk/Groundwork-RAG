@@ -5,8 +5,6 @@ work_model: on-site
 term: January 11, 2027 to April 23, 2027
 url: none
 ---
-This is a fictional sample posting written for the Groundwork demo. Tinderbolt Robotics does not exist.
-
 ABOUT TINDERBOLT
 Tinderbolt Robotics builds the software that runs autonomous carts in large greenhouses. Our carts move seedlings, harvest bins and tools between growing zones, and they share the aisles with people all day. Every release has to be safe, predictable and easy to roll back, so we test carefully and ship in small steps.
 
@@ -51,3 +49,5 @@ WHAT WE OFFER
 
 HOW TO APPLY
 Apply through your school's co-op portal. Include a resume and a link to a code sample, such as a GitHub repository, that you wrote yourself. Interviews have two parts: a 30-minute conversation with the hiring team and a 45-minute pair-programming exercise in Java. We do not ask for cover letters.
+
+This is a fictional sample posting written for the Groundwork demo. Tinderbolt Robotics does not exist.
