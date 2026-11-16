@@ -1,0 +1,58 @@
+/* tokens.css — the design system. every colour, size and timing in the components comes from here */
+
+:root {
+  /* paper, grid and ink. contrast is measured against the grid lines, not just the paper */
+  --paper: #f7f9fc;
+  --grid-line: rgb(31 90 166 / 0.09);
+  --grid: 24px;
+  --ink: #0e2a47;
+  --ink-soft: #3d5a79;
+  --ink-faint: #4f6b89;
+  --line: #6e87a6;
+  --blueprint: #1d5aab;
+  --blueprint-tint: rgb(29 90 171 / 0.16);
+
+  /* the one accent: Ask, focus rings and the active citation. nothing else gets it */
+  --accent: #9a6700;
+  --accent-hover: #835800;
+  --on-accent: #ffffff;
+  --accent-tint: rgb(214 158 0 / 0.22);
+
+  --error: #b42318;
+
+  /* type: one text face, one mono, and the mono is for data only */
+  --sans: "Barlow", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-answer: 1.1875rem;
+  --text-field: 1.25rem;
+  --text-state: 1.375rem;
+  --text-title: clamp(1.75rem, 1.3rem + 1.4vw, 2.25rem);
+  --leading-tight: 1.2;
+  --leading: 1.55;
+  --leading-answer: 1.6;
+  --measure: 56ch; /* ch is the width of "0", wider than Barlow's average letter: ~70 chars a line */
+
+  /* spacing in 4px steps */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  /* radii. where rounded things nest, inner radius = outer radius - the padding between them */
+  --r-lg: 10px;
+  --pad-field: 6px;
+  --r-sm: calc(var(--r-lg) - var(--pad-field));
+  --r-xs: 3px;
+
+  /* motion: short, eased out, no bounce */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration: 200ms;
+}
