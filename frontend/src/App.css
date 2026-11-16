@@ -1,0 +1,59 @@
+/* App.css — page layout only. one column on phones, answer and sources side by side on wide screens */
+
+/* the 1fr row pushes the footer to the bottom of the screen when there's little on the page */
+.app {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: var(--space-6);
+  width: min(100% - 2rem, 76rem);
+  min-height: 100dvh;
+  margin-inline: auto;
+  padding-block: clamp(var(--space-6), 6vw, var(--space-8)) var(--space-6);
+}
+
+.app__main {
+  display: grid;
+  gap: var(--space-5);
+  align-content: start;
+}
+
+.app__below {
+  display: grid;
+  gap: var(--space-6);
+}
+
+/* phones: answer, then its sources, then what to ask next */
+.app__results {
+  display: grid;
+  grid-template-areas:
+    "answer"
+    "sources"
+    "examples";
+  gap: var(--space-7);
+  align-items: start;
+}
+
+.app__results > .answer {
+  grid-area: answer;
+}
+
+.app__results > .sources {
+  grid-area: sources;
+}
+
+.app__results > .examples {
+  grid-area: examples;
+}
+
+@media (min-width: 60rem) {
+  /* the examples go under the answer. the 1fr row takes the extra height from the taller
+     sources column, so they sit right below the answer instead of drifting down */
+  .app__results {
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 24rem);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "answer sources"
+      "examples sources";
+    column-gap: var(--space-8);
+  }
+}
