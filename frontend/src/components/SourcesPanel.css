@@ -1,0 +1,98 @@
+.sources {
+  display: grid;
+  gap: var(--space-3);
+  align-content: start;
+  max-width: var(--measure); /* only bites once the panel drops under the answer */
+  animation: appear var(--duration) var(--ease-out) both;
+}
+
+.sources__title {
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+}
+
+.sources__list {
+  display: grid;
+  gap: var(--space-1);
+  padding: 0;
+  list-style: none;
+}
+
+/* the padding is the area that lights up; the negative margin keeps the text aligned with the title */
+.source {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  gap: var(--space-2);
+  padding: var(--space-3);
+  margin-inline: calc(-1 * var(--space-3));
+  border-radius: var(--r-sm);
+  scroll-margin-block: var(--space-5);
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.source--active {
+  background: var(--accent-tint);
+}
+
+/* high contrast mode drops backgrounds, so the highlight needs an outline there */
+@media (forced-colors: active) {
+  .source--active {
+    outline: 2px solid Highlight;
+  }
+}
+
+.source__number {
+  padding-top: 0.1em;
+  font-family: var(--mono);
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--blueprint);
+}
+
+.source__body {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.source__company {
+  font-size: var(--text-base);
+  overflow-wrap: anywhere;
+}
+
+.source__title {
+  overflow-wrap: anywhere;
+}
+
+.source__term,
+.source__meta,
+.source__snippet {
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+}
+
+.source__term,
+.source__ref {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.source__snippet {
+  line-height: 1.5;
+}
+
+/* ink-soft, not ink-faint: faint drops under 4.5:1 on the highlight */
+.source__id {
+  font-family: var(--mono);
+  font-size: var(--text-xs);
+  color: var(--ink-soft);
+  overflow-wrap: anywhere;
+}
+
+.source__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  justify-self: start;
+  min-height: 1.75rem;
+  font-size: var(--text-sm);
+}
