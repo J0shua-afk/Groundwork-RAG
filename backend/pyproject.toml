@@ -23,6 +23,9 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools]
 packages = ["groundwork"]
 
+[tool.setuptools.package-data]
+groundwork = ["prompts/*.md"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-m 'not integration'"
