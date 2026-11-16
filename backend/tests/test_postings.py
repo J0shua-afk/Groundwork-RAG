@@ -106,6 +106,13 @@ def test_field_written_twice_is_rejected(tmp_path):
         parse_posting(path)
 
 
+def test_file_that_isnt_utf8_is_rejected_instead_of_crashing(tmp_path):
+    path = tmp_path / "ansi.txt"
+    path.write_bytes((VALID_HEADER + "---\nCafé posting").encode("cp1252"))
+    with pytest.raises(PostingFormatError, match="isn't UTF-8"):
+        parse_posting(path)
+
+
 def test_file_name_that_cannot_be_a_source_id_is_rejected(tmp_path):
     path = write_file(tmp_path, "Fixture Foods.txt", VALID_HEADER + "---\nText.")
     with pytest.raises(PostingFormatError, match="lowercase words joined by dashes"):

@@ -72,7 +72,12 @@ def parse_posting(path: str | Path) -> Posting:
             "file name must be lowercase words joined by dashes, like loblaw-applied-ml.txt"
         )
 
-    header_lines, text = split_at_divider(path.read_text(encoding="utf-8-sig"))
+    try:
+        raw = path.read_text(encoding="utf-8-sig")
+    except UnicodeDecodeError:
+        raise PostingFormatError("file isn't UTF-8, re-save it with UTF-8 encoding") from None
+
+    header_lines, text = split_at_divider(raw)
     header = parse_header(header_lines)
     check_posting_text(text)
 
