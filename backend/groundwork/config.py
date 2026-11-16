@@ -33,6 +33,10 @@ GENERATION_EFFORT = "low"  # Haiku 5.5 defaults to medium; short grounded answer
 MAX_OUTPUT_TOKENS = 1024  # thinking counts toward this too, so leave some room
 GENERATION_TIMEOUT_SECONDS = 30  # the SDK default is 10 minutes, way too long to wait on a page
 
+# api
+MAX_QUESTION_CHARS = 500  # longer questions get a 422 before anything is embedded or sent
+SNIPPET_CHARS = 280  # how much of each cited chunk the sources panel gets
+
 # each corpus has its own folder and database. real postings only ever go to the private one
 CORPORA = {
     "private": (REPO_ROOT / "data" / "postings", "PRIVATE_DATABASE_URL"),
