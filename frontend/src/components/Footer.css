@@ -1,0 +1,11 @@
+.footer {
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+}
+
+.footer__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 1.75rem;
+}
