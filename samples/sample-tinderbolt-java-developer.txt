@@ -1,0 +1,53 @@
+company: Tinderbolt Robotics (Sample)
+title: Software Developer Co-op (Java)
+location: Waterloo, ON
+work_model: on-site
+term: January 11, 2027 to April 23, 2027
+url: none
+---
+This is a fictional sample posting written for the Groundwork demo. Tinderbolt Robotics does not exist.
+
+ABOUT TINDERBOLT
+Tinderbolt Robotics builds the software that runs autonomous carts in large greenhouses. Our carts move seedlings, harvest bins and tools between growing zones, and they share the aisles with people all day. Every release has to be safe, predictable and easy to roll back, so we test carefully and ship in small steps.
+
+THE ROLE
+You'll join the fleet services team, which owns the Java services that assign jobs to carts, track their positions and report problems to the greenhouse staff. You'll work on real tickets from your first week, pair with a senior developer on larger changes, and own at least one feature from design to release by the end of the term.
+
+WHAT YOU'LL WORK ON
+- Add features to our job-assignment service, written in Java 21 with Spring Boot
+- Write unit tests with JUnit 5 and integration tests that run against a simulated fleet
+- Improve the REST API that the greenhouse dashboard uses to show where each cart is
+- Investigate bugs reported from the field using logs, metrics and the cart simulator
+- Review pull requests from other developers and respond to reviews on your own
+- Write short design notes before starting any change that touches more than one service
+
+REQUIRED SKILLS
+- Currently enrolled in a computer science, software engineering or computer engineering program
+- Solid Java fundamentals: classes and interfaces, collections, exceptions and basic concurrency
+- Experience with Git, including branches and pull requests
+- Comfort working in a Linux terminal
+- Able to explain your reasoning clearly in code reviews and stand-ups
+
+ASSETS
+- Experience with Spring Boot or another Java web framework
+- Familiarity with Docker
+- Any exposure to robotics, embedded systems or message queues such as MQTT
+- Previous co-op experience on a team that ships production software
+
+WORK ARRANGEMENT
+This role is fully on-site at our Waterloo office and test greenhouse. Much of the work involves watching carts run new code in the test greenhouse, which can't be done remotely. Safety boots are provided for greenhouse visits.
+
+TERM, HOURS AND PAY
+The term runs from January 11, 2027 to April 23, 2027. Co-op students work 40 hours per week, Monday to Friday, with core hours from 10 a.m. to 3 p.m. The hourly rate is $28 for a first work term and $31 for students who have completed at least one previous co-op term.
+
+OUR TEAM
+The fleet services team has seven developers, a product manager and a test engineer. We hold a short stand-up each morning, plan work every two weeks and run a demo for the whole company on the last Friday of each month. Co-op students present at the demo too, usually in their second month.
+
+WHAT WE OFFER
+- A mentor from the fleet services team for your whole term
+- A laptop and a second monitor
+- Lunch on Wednesdays with the robotics hardware team
+- A transit pass for the Waterloo region
+
+HOW TO APPLY
+Apply through your school's co-op portal. Include a resume and a link to a code sample, such as a GitHub repository, that you wrote yourself. Interviews have two parts: a 30-minute conversation with the hiring team and a 45-minute pair-programming exercise in Java. We do not ask for cover letters.

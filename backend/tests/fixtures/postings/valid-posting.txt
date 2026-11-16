@@ -1,0 +1,13 @@
+company: Fixture Foods (Sample)
+title: Inventory Analyst Co-op
+location: Mississauga, ON
+work_model: Hybrid
+term: January 4, 2027 to April 30, 2027
+url: https://example.com/postings/inventory-analyst
+---
+
+About the role:
+Track stock levels across three warehouses and report weekly variances.
+
+Requirements:
+- SQL and Excel

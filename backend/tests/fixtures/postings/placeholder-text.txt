@@ -1,0 +1,8 @@
+company: Fixture Foods (Sample)
+title: Inventory Analyst Co-op
+location: Mississauga, ON
+work_model: hybrid
+term: not stated
+url: none
+---
+[paste the full posting text here, unedited]

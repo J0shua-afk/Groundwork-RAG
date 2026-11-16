@@ -1,0 +1,8 @@
+company: Fixture Foods (Sample)
+title: Inventory Analyst Co-op
+location: Mississauga, ON
+work_model: flexible
+term: not stated
+url: none
+---
+Track stock levels across three warehouses.

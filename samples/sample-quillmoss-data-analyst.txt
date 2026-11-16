@@ -1,0 +1,37 @@
+company: Quillmoss Analytics (Sample)
+title: Data Analyst Co-op
+location: Toronto, ON
+work_model: hybrid
+term: January 4, 2027 to April 30, 2027
+url: none
+---
+This is a fictional sample posting written for the Groundwork demo. Quillmoss Analytics does not exist.
+
+About us:
+Quillmoss Analytics helps mid-sized retailers understand what sells, where, and why. Our team of twelve analysts and engineers turns point-of-sale data into weekly reports that store managers actually read.
+
+What you'll do:
+- Build and maintain Power BI dashboards for sell-through, weeks of supply and stock variance
+- Write SQL queries against our PostgreSQL warehouse to answer questions from client teams
+- Clean and reshape raw sales extracts with Python and pandas before they reach the warehouse
+- Check every weekly report against last week's numbers and flag anything that moved more than expected
+- Present one finding to the client team at the end of the term
+
+What you bring:
+- Enrolled in a computer science, statistics, business analytics or related program
+- Comfortable writing SQL joins and aggregations
+- Some experience with Python, including pandas
+- Clear written English; you'll write short notes that explain each dashboard change
+
+Nice to have:
+- Experience with Power BI or Tableau
+- Familiarity with retail terms such as SKU, sell-through and replenishment
+
+Work arrangement:
+This is a hybrid role. You'll work from our Toronto office on Tuesdays and Thursdays and from home the rest of the week. We provide a laptop.
+
+Term and pay:
+The co-op runs from January 4, 2027 to April 30, 2027, full time at 37.5 hours per week. The pay range is $24 to $27 per hour.
+
+How to apply:
+Apply through your school's co-op portal with a resume and a short note about a dataset you enjoyed working with. We'll invite shortlisted students to a 30-minute video interview.

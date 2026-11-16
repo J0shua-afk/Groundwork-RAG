@@ -1,0 +1,38 @@
+company: Larkspire Civic Labs (Sample)
+title: Machine Learning Research Co-op
+location: Remote (Canada)
+work_model: remote
+term: not stated
+url: none
+---
+This is a fictional sample posting written for the Groundwork demo. Larkspire Civic Labs does not exist.
+
+## Who We Are
+Larkspire Civic Labs is a small non-profit research group that studies how cities can use open data to plan transit and housing. We publish our code and our papers, and we partner with municipal planning offices across Canada.
+
+## The Project
+This term's project asks whether simple models can predict which bus stops will be overcrowded a week ahead, using open ridership counts, weather data and event calendars. You'll compare a seasonal baseline against gradient-boosted trees and a small neural network, and write up what worked and what didn't.
+
+## Responsibilities
+- Gather and clean open ridership and weather datasets
+- Build a reproducible training pipeline in Python with scikit-learn and PyTorch
+- Evaluate each model against the baseline with mean absolute error on held-out weeks
+- Write a short technical report and present it to our partner planning office
+
+## Eligibility
+This position is open to graduate students only (master's or PhD) in computer science, statistics, data science or a related field. Undergraduate students are not eligible for this posting.
+
+## Required Qualifications
+- Strong Python, including pandas and NumPy
+- Coursework or research experience in machine learning
+- Experience evaluating models on held-out data
+- Clear technical writing
+
+## Working Remotely
+The role is fully remote within Canada. The team meets on video twice a week, and you'll need a reliable internet connection. We provide access to a cloud GPU account for training runs.
+
+## Term
+The start and end dates are set with each student's university and are not stated in this posting.
+
+## How to Apply
+Send a CV, a transcript and a one-page summary of a past machine learning project through your university's co-op office.

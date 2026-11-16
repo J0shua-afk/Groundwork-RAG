@@ -1,0 +1,8 @@
+company: [company name, as written in the posting]
+title: [job title, as written in the posting]
+location: [city, province, or "not stated"]
+work_model: [on-site | hybrid | remote | not stated]
+term: [start date to end date, or "not stated"]
+url: [link to the posting, or "none"]
+---
+[paste the full posting text here, unedited]
