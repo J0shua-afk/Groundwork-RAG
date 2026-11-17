@@ -1,0 +1,45 @@
+company: Glimmerfen Power (Sample)
+title: IT Security Analyst Co-op
+location: Regina, SK
+work_model: on-site
+term: January 11, 2027 to April 30, 2027
+url: none
+---
+Position summary:
+Glimmerfen Power generates and distributes electricity to communities across southern Saskatchewan. The IT Security Analyst Co-op supports the cyber security office in protecting the systems that run our corporate network and our customer billing. The student does not work on the systems that control the power grid.
+
+Duties:
+- Triage alerts from the security information and event management (SIEM) system and escalate real incidents to a senior analyst
+- Review reports of suspicious emails from staff and remove confirmed phishing messages
+- Run weekly vulnerability scans and track each finding until it is fixed
+- Write PowerShell scripts to automate routine checks on Windows servers and Active Directory accounts
+- Update security procedures and help prepare monthly reports for management
+
+Essential qualifications:
+- Currently enrolled in a computer science, information technology, cyber security or computer engineering program, and returning to full-time studies after the work term
+- Knowledge of networking fundamentals: TCP/IP, DNS, firewalls and VPNs
+- Experience with Windows administration or Active Directory, through coursework, labs or work
+- Basic scripting ability in PowerShell, Python or Bash
+- Strong attention to detail and the ability to keep sensitive information confidential
+
+Asset qualifications:
+- Hands-on experience from capture-the-flag competitions or a home lab
+- Progress toward a security certification such as CompTIA Security+
+- Knowledge of French
+
+Conditions of employment:
+- Must be a Canadian citizen or permanent resident
+- Must pass a criminal record check and a credit check before the start date
+- Must sign a confidentiality agreement
+- This position is on-site at our head office in Regina. Remote work is not available because of the security requirements of the role.
+
+Hours and pay:
+Monday to Friday, 8:00 a.m. to 4:30 p.m. Co-op students are not placed on call. Pay follows our student rate schedule: $23.40 per hour for students who have completed first or second year, and $27.15 per hour for students who have completed third year or above.
+
+Term:
+The work term starts on January 11, 2027 and ends on April 30, 2027.
+
+How to apply:
+Submit a resume and a cover letter that addresses each essential qualification through your institution's co-op portal. Glimmerfen Power is committed to employment equity and welcomes applications from Indigenous peoples, women, persons with disabilities and members of visible minorities.
+
+This is a fictional sample posting written for the Groundwork demo. Glimmerfen Power does not exist.

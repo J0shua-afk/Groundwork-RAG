@@ -1,0 +1,38 @@
+company: Driftquill Learning (Sample)
+title: Front-End Developer Co-op
+location: Vancouver, BC
+work_model: remote
+term: January 4, 2027 to April 16, 2027
+url: none
+---
+Driftquill Learning makes reading-practice software for elementary school classrooms. Teachers assign short stories, students read them aloud, and our app gives each student gentle feedback on pace and accuracy. About 40,000 students in British Columbia and Alberta use it every week.
+
+What you'd work on
+Our front end is a React app written in TypeScript. As a co-op student you'd join the classroom team and build features teachers ask for, like assignment scheduling and a progress view for parents. Recent co-op students shipped the reading-streak calendar and rebuilt our settings pages.
+
+Day to day you would:
+• Build React components in TypeScript from designs in Figma
+• Make sure every page works with a keyboard and a screen reader, and meets WCAG 2.2 AA
+• Write tests with Jest and React Testing Library, and end-to-end tests with Playwright
+• Fix bugs reported by teachers through our support team
+• Demo your work to the company at the end of each two-week sprint
+
+What we're looking for
+• You're studying computer science, software engineering, interaction design or something close to it
+• You've built at least one web app with React, Vue or a similar framework
+• You know HTML and CSS well, not only the framework on top of them
+• You can show us your work: a GitHub profile or portfolio is required
+• You care about accessibility, or you're keen to learn
+
+TypeScript experience is a bonus, not a requirement. We'll help you pick it up.
+
+How we work
+We're a fully remote team. You can work from anywhere in Canada, but you'll need to be available from 9 a.m. to 3 p.m. Pacific time for meetings and pairing. We ship you a laptop and a monitor before your first day, and we meet in person once a term in Vancouver, with travel paid by Driftquill.
+
+Term and pay
+The work term runs from January 4, 2027 to April 16, 2027, 37.5 hours a week. We share the pay range with every candidate at the first interview.
+
+How to apply
+Apply through your co-op portal with a resume and a link to your GitHub or portfolio. A cover letter is optional. Our process is a 30-minute chat and a take-home exercise of about two hours that we discuss with you afterwards.
+
+This is a fictional sample posting written for the Groundwork demo. Driftquill Learning does not exist.

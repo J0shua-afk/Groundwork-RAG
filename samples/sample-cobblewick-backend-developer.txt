@@ -1,0 +1,42 @@
+company: Cobblewick Mutual Insurance (Sample)
+title: Backend Developer Co-op
+location: Halifax, NS
+work_model: hybrid
+term: January 4, 2027 to April 30, 2027
+url: none
+---
+About Cobblewick Mutual
+Cobblewick Mutual Insurance covers homes, cars and small businesses across Atlantic Canada. We're owned by our policyholders, not shareholders, so our technology team builds for the people filing a claim at two in the morning after a storm, not for a quarterly report.
+
+The Team
+You'll join the claims platform team: six developers, a QA analyst and a product owner. The team owns the services that take a new claim, check it against the policy, and route it to an adjuster. Most of our services are written in Java, with a few newer ones in Kotlin.
+
+What You'll Do
+- Build and maintain REST endpoints in Java 17 with Spring Boot
+- Write SQL against our PostgreSQL databases, including schema migrations with Flyway
+- Add unit tests with JUnit and contract tests for the APIs other teams depend on
+- Help move claim documents from an old file share to cloud storage
+- Join code reviews, sprint planning and a weekly session where developers listen in on calls with adjusters
+
+What You Need
+- Enrolled in computer science, software engineering or a related program, returning to school after the term
+- At least one completed course that used Java, and a solid grasp of object-oriented design
+- Comfortable with SQL: joins, indexes and transactions
+- Experience with Git and pull requests
+- Legally eligible to work in Canada
+
+Nice to Have
+- Kotlin or Spring Boot experience
+- Exposure to Docker or a CI pipeline
+- Interest in insurance, finance or other regulated industries
+
+Where You'll Work
+This is a hybrid role. You'll be in our downtown Halifax office on Mondays, Wednesdays and Thursdays, and work from home on Tuesdays and Fridays. Your first two weeks are fully in the office so you can meet the team and get set up.
+
+Term and Pay
+The work term runs from January 4, 2027 to April 30, 2027. Students who do well may be offered an extension to August 2027, by agreement with their school. The pay is $26 per hour for 35 hours a week, and co-op students get the same paid holidays as staff.
+
+How to Apply
+Apply through your school's co-op portal with a resume, your most recent transcript and a cover letter. The cover letter is required: tell us about a project where something went wrong and what you did about it. Applications without a cover letter won't be reviewed. Interviews are one hour on video and include a short Java code-reading exercise.
+
+This is a fictional sample posting written for the Groundwork demo. Cobblewick Mutual Insurance does not exist.

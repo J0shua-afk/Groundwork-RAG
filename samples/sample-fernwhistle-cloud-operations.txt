@@ -1,0 +1,42 @@
+company: Fernwhistle Freight (Sample)
+title: Cloud Operations Co-op
+location: Calgary, AB
+work_model: hybrid
+term: January 4, 2027 to April 30, 2027
+url: none
+---
+WHO WE ARE
+Fernwhistle Freight runs a fleet of 400 trucks hauling groceries and building supplies between Calgary, Edmonton and Saskatoon. Dispatchers, drivers and customers all rely on our software to know where a load is and when it will arrive, so our systems need to stay up around the clock.
+
+WHAT THE CLOUD OPERATIONS TEAM DOES
+The cloud operations team keeps our applications running on AWS. We manage the infrastructure as code, run the deployment pipelines, watch the dashboards and fix things when they break. We're moving our last services off an old data centre and onto AWS this year, and you'll be part of that move.
+
+KEY RESPONSIBILITIES
+- Write and review Terraform for AWS resources, including EC2, ECS, RDS and S3
+- Improve our GitHub Actions pipelines so every service builds, tests and deploys the same way
+- Write Python and Bash scripts to automate routine operations work
+- Build CloudWatch dashboards and alarms for the services we move
+- Help write runbooks so the on-call engineer knows what to do when an alarm fires
+
+REQUIREMENTS
+- Enrolled in computer science, software engineering, computer engineering or an IT program
+- Comfortable on the Linux command line
+- Programming experience in Python
+- Basic networking knowledge: IP addresses, subnets, DNS and load balancers
+- Experience with Git
+
+BONUS POINTS
+- Any hands-on AWS experience, including the free tier or a course lab
+- Terraform, Docker or Kubernetes
+- Reading Java: our dispatch service is written in Java, and being able to follow its code helps when debugging, though you won't be writing Java in this role
+
+WORK ARRANGEMENT
+You'll be fully on-site at our Calgary office for your first four weeks, while you learn our systems alongside the team. After that the role is hybrid, with Tuesdays and Thursdays in the office and the rest of the week from home. Co-op students are never put on the on-call rotation.
+
+TERM AND PAY
+January 4, 2027 to April 30, 2027, 40 hours a week. The pay range is $27 to $30 per hour, based on your year of study and past co-op experience.
+
+APPLYING
+Apply through your co-op portal with a resume. A cover letter is optional. Tell us about something you've automated, even a small script for yourself. We hold one technical interview of 45 minutes, which includes reading and explaining a short Terraform file.
+
+This is a fictional sample posting written for the Groundwork demo. Fernwhistle Freight does not exist.

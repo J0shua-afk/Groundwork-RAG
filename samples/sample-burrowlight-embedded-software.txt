@@ -1,0 +1,42 @@
+company: Burrowlight Medical (Sample)
+title: Embedded Software Co-op
+location: Montréal, QC
+work_model: hybrid
+term: January 4, 2027 to August 20, 2027
+url: none
+---
+Company Overview
+Burrowlight Medical designs handheld pulse oximeters for clinics and home care. Our devices measure blood oxygen and heart rate and send readings to a phone app over Bluetooth Low Energy. Because our products are medical devices, every software change is reviewed, traced to a requirement and tested before release.
+
+Role Summary
+This is an eight-month co-op on the firmware team. You'll work on the code that runs on the device itself and on the tools we use to test it. Students must be available for the full eight months; we do not offer a four-month version of this role.
+
+Responsibilities
+1. Write and debug firmware in C for ARM Cortex-M microcontrollers running FreeRTOS
+2. Add unit tests for firmware modules and keep them running in our CI pipeline
+3. Write Python test scripts with pytest that drive devices on the lab bench through a serial interface
+4. Investigate sensor and Bluetooth issues with a logic analyzer and an oscilloscope
+5. Document each change so it can be traced to its requirement under our IEC 62304 process
+
+Requirements
+- Enrolled in computer engineering, electrical engineering, software engineering or a related program, having completed at least two academic terms
+- Strong C programming, including pointers, bit manipulation and memory management
+- At least one course or project involving microcontrollers
+- Working knowledge of Python
+- Working knowledge of French is required: our lab technicians work in French and some of our test documentation is written in French
+
+Assets
+- C++ experience
+- Experience with an RTOS, Bluetooth Low Energy, I2C or SPI
+- Familiarity with regulated software processes in medical devices, aerospace or automotive
+
+Work Arrangement
+This is a hybrid role. Lab work means you'll be at our Montréal office four days a week, with one day of remote work that you choose with your manager.
+
+Term and Compensation
+The term runs from January 4, 2027 to August 20, 2027. Pay is $25 per hour for the first four months and $27 per hour for the last four months, for 37.5 hours a week. We also cover a monthly public transit pass.
+
+To Apply
+Apply through your co-op portal with a resume and transcript. Interviews are held in English, with a short part of the conversation in French.
+
+This is a fictional sample posting written for the Groundwork demo. Burrowlight Medical does not exist.

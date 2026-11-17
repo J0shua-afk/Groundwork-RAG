@@ -1,0 +1,18 @@
+company: Hollowmint Games (Sample)
+title: QA Tester Co-op
+location: not stated
+work_model: not stated
+term: January 2027 to April 2027
+url: none
+---
+Hollowmint Games is a small studio making puzzle games for phones. Our next game, a tile-sliding puzzler with 300 hand-built levels, launches on iOS and Android this spring, and we need help finding bugs before players do.
+
+As our QA Tester Co-op you will play builds of the game every day on a range of iOS and Android devices, write clear bug reports in Jira with steps to reproduce, screenshots and device details, re-test fixes before they go out, and check every level on our list before each release. Later in the term you can help write automated tests in C# with the Unity Test Framework if you're interested.
+
+You should be enrolled in a co-op program in computer science, game development or a related field, enjoy puzzle games, and be patient enough to play the same level fifty times to find out exactly when a bug happens. Some experience with Unity or C# is an asset but not required.
+
+The term is Winter 2027, January to April. Exact start and end dates will be confirmed with your school. Pay is $19.50 per hour, full time.
+
+Apply through your co-op portal with a resume and a short list of three mobile games you've played recently and one thing you'd change about each.
+
+This is a fictional sample posting written for the Groundwork demo. Hollowmint Games does not exist.
