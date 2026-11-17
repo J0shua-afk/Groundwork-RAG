@@ -28,10 +28,6 @@ packages = ["groundwork"]
 [tool.setuptools.package-data]
 groundwork = ["prompts/*.md"]
 
-[tool.vercel]
-# vercel looks for main.py or app.py by default, ours is inside the package
-entrypoint = "groundwork.api:app"
-
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-m 'not integration'"
